@@ -72,12 +72,12 @@
         ::-webkit-scrollbar-thumb { background: #FDA4AF; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #F43F5E; }
 
-        /* Tambahkan styling untuk memastikan centering sempurna */
+        /* Scroll indicator - centering tanpa transform agar tidak bentrok animasi */
         .scroll-indicator {
             position: absolute;
             bottom: 2rem;
-            left: 50%;
-            transform: translate(-50%, 0);
+            left: 0;
+            right: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -89,13 +89,13 @@
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
-                transform: translate(-50%, 0);
+                transform: translateY(0);
             }
             40% {
-                transform: translate(-50%, -10px);
+                transform: translateY(-10px);
             }
             60% {
-                transform: translate(-50%, -5px);
+                transform: translateY(-5px);
             }
         }
     </style>
@@ -313,11 +313,11 @@
                 <h2 class="text-4xl md:text-5xl font-serif font-extrabold mb-6 text-brand-900 uppercase tracking-widest">Tanda Kasih</h2>
                 <p class="text-stone-600 mb-10 text-lg md:text-xl leading-relaxed italic">Kehadiran Anda adalah kado terindah. Jika ingin memberikan tanda kasih secara digital, Anda dapat melalui:</p>
                 
-                <div class="p-8 md:p-12 bg-brand-50 rounded-[3rem] border-2 border-brand-200 text-center">
+                <div class="p-6 md:p-12 bg-brand-50 rounded-[3rem] border-2 border-brand-200 text-center overflow-hidden">
                     <p class="font-bold text-xl md:text-2xl mb-3 text-brand-900">Bank NTB Syariah</p>
-                    <p class="text-4xl md:text-5xl font-mono text-brand-400 tracking-[0.15em] mb-4 font-bold select-all drop-shadow-sm">0070202861284</p>
-                    <p class="text-sm md:text-base text-stone-600 mb-8 uppercase font-bold tracking-[0.2em]">a.n FUAD ABDILI</p>
-                    <button onclick="copyRekening()" class="px-12 py-5 bg-brand-900 text-white rounded-full font-bold text-sm hover:bg-brand-800 active:scale-95 transition-all shadow-xl uppercase tracking-widest w-full md:w-auto">
+                    <p class="text-2xl sm:text-3xl md:text-5xl font-mono text-brand-400 tracking-[0.05em] sm:tracking-[0.1em] md:tracking-[0.15em] mb-4 font-bold select-all drop-shadow-sm break-all">0070202861284</p>
+                    <p class="text-sm md:text-base text-stone-600 mb-8 uppercase font-bold tracking-[0.1em] md:tracking-[0.2em]">a.n FUAD ABDILI</p>
+                    <button onclick="copyRekening()" class="px-8 md:px-12 py-5 bg-brand-900 text-white rounded-full font-bold text-sm hover:bg-brand-800 active:scale-95 transition-all shadow-xl uppercase tracking-widest w-full md:w-auto">
                         Salin Rekening
                     </button>
                 </div>
